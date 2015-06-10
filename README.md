@@ -1,1 +1,2 @@
-# cfg4-sample-apps
+# Sample **cfg4j** apps
+

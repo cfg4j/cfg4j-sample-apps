@@ -18,19 +18,7 @@
 buildscript {
 
     ext {
-        artifactGroup = "org.cfg4j.sample"
-        artifactVersion = "1.0.0-SNAPSHOT"
-
-        springBootVersion = "1.2.4.RELEASE"
-    }
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        artifactName = "git-simple"
     }
 }
 
@@ -67,4 +55,9 @@ defaultTasks "clean", "build"
 compileJava {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
+}
+
+jar {
+    baseName = "${artifactName}"
+    version = "${artifactVersion}"
 }
