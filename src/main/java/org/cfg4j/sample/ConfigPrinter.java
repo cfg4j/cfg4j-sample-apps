@@ -32,8 +32,16 @@ public class ConfigPrinter implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
+    String previousSettingValue = null;
+
     while (true) {
-      System.out.println("some.setting = " + configurationProvider.getProperty("some.setting"));
+      String newSettingValue = configurationProvider.getProperty("some.setting");
+
+      if (!newSettingValue.equals(previousSettingValue)) {
+        System.out.println("new value: some.setting = " + newSettingValue);
+        previousSettingValue = newSettingValue;
+      }
+
       Thread.sleep(1000);
     }
   }
