@@ -10,8 +10,7 @@
 * Run app (in this example: "git-simple") - read README in the app root directory for more information.
 
 ```
-cd git-simple
-java -jar build/libs/git-simple-1.0.0-SNAPSHOT.jar
+java -jar git-simple/build/libs/git-simple-1.0.0-SNAPSHOT.jar
 ```
 
 ## Apps

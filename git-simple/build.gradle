@@ -19,13 +19,23 @@ buildscript {
 
     ext {
         artifactName = "git-simple"
+
+        springBootVersion = "1.2.4.RELEASE"
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
 // ----------- Plugins -----------
 
-apply plugin: "java"
-apply plugin: "idea"
+apply plugin: "spring-boot"
 
 // ----------- Repositories -----------
 
@@ -42,21 +52,7 @@ dependencies {
     compile group: "org.cfg4j", name: "cfg4j", version: "3.0.0"
 }
 
-// ----------- EXTRA tasks -----------
-
-// Generate Gradle wrapper
-task wrapper(type: Wrapper) {
-    gradleVersion = "2.4"
-}
-
 // ----------- Task configurations -----------
-defaultTasks "clean", "build"
-
-compileJava {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-}
-
 jar {
     baseName = "${artifactName}"
     version = "${artifactVersion}"

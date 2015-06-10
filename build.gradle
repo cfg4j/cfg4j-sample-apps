@@ -23,43 +23,11 @@ buildscript {
 
         springBootVersion = "1.2.4.RELEASE"
     }
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
 }
 
 // ----------- Plugins -----------
 
 apply plugin: "java"
-apply plugin: "idea"
-
-// ----------- Repositories -----------
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-// ----------- External module dependencies -----------
-
-dependencies {
-    compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
-
-    compile group: "org.cfg4j", name: "cfg4j", version: "3.0.0"
-}
-
-// ----------- EXTRA tasks -----------
-
-// Generate Gradle wrapper
-task wrapper(type: Wrapper) {
-    gradleVersion = "2.4"
-}
 
 // ----------- Task configurations -----------
 defaultTasks "clean", "build"
