@@ -4,7 +4,7 @@
 * Build all apps
 
 ```
-> ./gradlew jar
+> ./gradlew build
 ```
 
 * Run app (in this example: "git-simple") - read README in the app root directory for more information.
