@@ -16,7 +16,10 @@
 package org.cfg4j.sample;
 
 import org.cfg4j.provider.ConfigurationProvider;
-import org.cfg4j.provider.ConfigurationProviders;
+import org.cfg4j.provider.ConfigurationProviderBuilder;
+import org.cfg4j.source.ConfigurationSource;
+import org.cfg4j.source.git.GitConfigurationSourceBuilder;
+import org.cfg4j.source.refresh.strategy.PeriodicalRefreshStrategy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +32,14 @@ public class ConfigBeans {
 
   @Bean
   public ConfigurationProvider configurationProvider() {
-    return ConfigurationProviders.backedByGit(configRepoPath);
+    ConfigurationSource source = new GitConfigurationSourceBuilder()
+        .withRepositoryURI(configRepoPath)
+        .build();
+
+    return new ConfigurationProviderBuilder()
+        .withConfigurationSource(source)
+        .withRefreshStrategy(new PeriodicalRefreshStrategy(5000))
+        .build();
   }
 
 }
