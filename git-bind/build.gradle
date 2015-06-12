@@ -18,9 +18,7 @@
 buildscript {
 
     ext {
-        artifactName = "git-simple"
-
-        springBootVersion = "1.2.4.RELEASE"
+        artifactName = "git-bind"
     }
 
     repositories {
