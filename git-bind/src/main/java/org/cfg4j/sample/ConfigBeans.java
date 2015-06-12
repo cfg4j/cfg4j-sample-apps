@@ -27,7 +27,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigBeans {
 
-  @Value("${configRepoPath:/Users/norbertp/cfg4j/cfg4j-git-sample-config}")
+  @Value("${configRepoPath:https://github.com/cfg4j/cfg4j-git-sample-config.git}")
   private String configRepoPath;
 
   @Bean
