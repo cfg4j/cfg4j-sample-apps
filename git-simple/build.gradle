@@ -49,7 +49,7 @@ repositories {
 dependencies {
     compile group: "org.springframework.boot", name: "spring-boot-starter", version: "${springBootVersion}"
 
-    compile group: "org.cfg4j", name: "cfg4j", version: "3.0.0"
+    compile group: "org.cfg4j", name: "cfg4j", version: "${cfg4jVersion}"
 }
 
 // ----------- Task configurations -----------
