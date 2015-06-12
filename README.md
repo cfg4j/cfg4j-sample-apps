@@ -7,12 +7,14 @@
 > ./gradlew build
 ```
 
-* Run app (in this example: "git-simple") - read README in the app root directory for more information.
+* Run app (in this example: "git-bind") - read README in the app root directory for more information.
 
 ```
-java -jar git-simple/build/libs/git-simple-1.0.0-SNAPSHOT.jar
+java -jar git-bind/build/libs/git-bind-1.0.0-SNAPSHOT.jar
 ```
 
 ## Apps
+* [git-bind](git-bind/) - reads configuration from a given git repository (using object binding) and outputs values
+   to the stdout. Reloads configuration every 3 seconds. 
 * [git-simple](git-simple/) - reads configuration from a given git repository (using *getProperty* methods) and outputs values
-  to the stdout. Reloads configuration every 5 seconds. 
+  to the stdout. Reloads configuration every 3 seconds.
