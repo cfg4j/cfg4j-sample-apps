@@ -23,7 +23,7 @@ You can:
 @Value("${configRepoPath:https://github.com/cfg4j/cfg4j-git-sample-config.git}")
 private String configRepoPath; // Run with -DconfigRepoPath=<repositoryUrl> parameter to override
 
-@Value("${configBranch:https:production-env}")
+@Value("${configBranch:production-env}")
 private String branch; // Run with -DconfigBranch=<branchName> parameter to override
 
 @Bean
