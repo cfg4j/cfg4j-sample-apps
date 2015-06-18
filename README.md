@@ -15,7 +15,9 @@
 ```
 
 ## Apps
-* [git-bind](git-bind/) - reads configuration from a given git repository (using object binding) and outputs values
-   to the stdout. Reloads configuration every 3 seconds. 
 * [git-simple](git-simple/) - reads configuration from a given git repository (using *getProperty* methods) and outputs values
-  to the stdout. Reloads configuration every 3 seconds.
+  to the stdout. Automatically reloads configuration after change.
+* [git-bind](git-bind/) - reads configuration from a given git repository (using object binding) and outputs values
+   to the stdout. Automatically reloads configuration after change.
+* [git-multi-file](git-multi-file/) - reads configuration from a given git repository (from multiple files) and outputs values
+  to the stdout. Automatically reloads configuration after change.
