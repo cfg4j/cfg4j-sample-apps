@@ -1,4 +1,4 @@
-# cfg4 sample app (configuration source: git)
+# [cfg4j](http://cfg4j.org) sample app (uses **git** as configuration store)
 App demonstrating how to access configuration stored in a Git repository using cfg4j library. Uses configuration object binding.
 
 ## Usage
@@ -9,16 +9,16 @@ App demonstrating how to access configuration stored in a Git repository using c
 ```
 
 You can:
-* use your own git repository: **-DconfigRepoPath=<repositoryUrl>** parameter. Both local and remote repos are supported.
-* use non-default branch: **-DconfigBranch=<branchName>**
+* use any git repository: **-DconfigRepoPath=\<repositoryUrl\>** parameter. Both local and remote repos are supported.
+* use non-default branch: **-DconfigBranch=\<branchName\>**
 
 ```
 > java -DconfigRepoPath=/tmp/myRepo.git -DconfigBranch-master -jar git-bind/build/libs/git-bind-1.0.0-SNAPSHOT.jar
 ```
 
-## Snippets
+## Code snippets
 
-### Configuration beans (using Spring Boot) - **see ConfigBeans.java**
+### Configuration beans - see ConfigBeans.java
 ```java
 @Value("${configRepoPath:https://github.com/cfg4j/cfg4j-git-sample-config.git}")
 private String configRepoPath; // Run with -DconfigRepoPath=<repositoryUrl> parameter to override
@@ -48,7 +48,7 @@ public ConfigurationProvider configurationProvider() {
 }
 ```
 
-### Obtain configuration - **see MainController.java**
+### Obtain configuration - see MainController.java
 ```java
 // Define configuration interface 
 public interface ReksioConfig {
