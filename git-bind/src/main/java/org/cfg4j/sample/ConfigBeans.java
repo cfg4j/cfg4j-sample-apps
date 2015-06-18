@@ -18,7 +18,10 @@ package org.cfg4j.sample;
 import org.cfg4j.provider.ConfigurationProvider;
 import org.cfg4j.provider.ConfigurationProviderBuilder;
 import org.cfg4j.source.ConfigurationSource;
+import org.cfg4j.source.context.Environment;
+import org.cfg4j.source.context.ImmutableEnvironment;
 import org.cfg4j.source.git.GitConfigurationSourceBuilder;
+import org.cfg4j.source.refresh.RefreshStrategy;
 import org.cfg4j.source.refresh.strategy.PeriodicalRefreshStrategy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -30,18 +33,29 @@ import java.util.concurrent.TimeUnit;
 public class ConfigBeans {
 
   @Value("${configRepoPath:https://github.com/cfg4j/cfg4j-git-sample-config.git}")
-  private String configRepoPath;
+  private String configRepoPath; // Run with -DconfigRepoPath=<repositoryUrl> parameter to override
+
+  @Value("${configBranch:https:production-env}")
+  private String branch; // Run with -DconfigBranch=<branchName> parameter to override
 
   @Bean
   public ConfigurationProvider configurationProvider() {
+    // Use Git repository as configuration store
     ConfigurationSource source = new GitConfigurationSourceBuilder()
         .withRepositoryURI(configRepoPath)
         .build();
 
+    // Select branch to use (use new DefaultEnvironment()) for master
+    Environment environment = new ImmutableEnvironment(branch);
+
+    // Reload configuration every 5 seconds
+    RefreshStrategy refreshStrategy = new PeriodicalRefreshStrategy(5, TimeUnit.SECONDS);
+
+    // Create provider
     return new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
-        .withRefreshStrategy(new PeriodicalRefreshStrategy(3, TimeUnit.SECONDS))
+        .withEnvironment(environment)
+        .withRefreshStrategy(refreshStrategy)
         .build();
   }
-
 }
