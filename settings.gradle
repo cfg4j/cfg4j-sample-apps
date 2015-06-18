@@ -13,4 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-include 'git-simple', 'git-bind'
+include 'git-simple', 'git-bind', 'git-multi-branch', 'git-multi-file'

@@ -13,7 +13,7 @@ You can:
 * use non-default branch: **-DconfigBranch=\<branchName\>**
 
 ```
-> java -DconfigRepoPath=/tmp/myRepo.git -DconfigBranch-master -jar git-simple/build/libs/git-simple-1.0.0-SNAPSHOT.jar
+> java -DconfigRepoPath=/tmp/myRepo.git -DconfigBranch=master -jar git-simple/build/libs/git-simple-1.0.0-SNAPSHOT.jar
 ```
 
 ## Code snippets
