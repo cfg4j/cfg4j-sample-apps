@@ -1,4 +1,4 @@
-# Sample **cfg4j** apps
+## Sample applications using [cfg4j](http://cfg4j.org) library
 
 ## Usage
 * Build all apps
@@ -8,7 +8,7 @@
 > ./gradlew build
 ```
 
-* Run app (in this example: "git-bind") - read README in the app root directory for more information.
+* Run app (in this example: "git-bind") - read README.md file in the corresponding app root directory for more information.
 
 ```
 > java -jar git-bind/build/libs/git-bind-1.0.0-SNAPSHOT.jar
