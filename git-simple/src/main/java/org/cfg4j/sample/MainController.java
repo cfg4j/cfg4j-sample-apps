@@ -15,6 +15,9 @@
  */
 package org.cfg4j.sample;
 
+import org.cfg4j.provider.ConfigurationProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,8 +26,27 @@ import org.springframework.stereotype.Controller;
 @Controller
 @EnableAutoConfiguration
 @ComponentScan
-public class MainController {
+public class MainController implements CommandLineRunner {
 
+  @Autowired
+  private ConfigurationProvider configurationProvider;
+
+  public void run(String... args) throws Exception {
+    String previousSettingValue = null;
+
+    while (true) {
+      String newSettingValue = configurationProvider.getProperty("some.setting", String.class);
+
+      if (!newSettingValue.equals(previousSettingValue)) {
+        System.out.println("new value: some.setting = " + newSettingValue);
+        previousSettingValue = newSettingValue;
+      }
+
+      Thread.sleep(1000);
+    }
+  }
+
+  // For Spring Boot
   public static void main(String[] args) throws Exception {
     SpringApplication.run(MainController.class, args);
   }
