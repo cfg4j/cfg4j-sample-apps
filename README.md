@@ -15,6 +15,8 @@
 ```
 
 ## Apps
+* [classpath-bind](classpath-bind/) - reads configuration from a classpath files and outputs values
+  to the stdout.
 * [git-simple](git-simple/) - reads configuration from a given git repository (using *getProperty* methods) and outputs values
   to the stdout. Automatically reloads configuration after change.
 * [git-bind](git-bind/) - reads configuration from a given git repository (using object binding) and outputs values
