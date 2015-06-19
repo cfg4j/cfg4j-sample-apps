@@ -22,7 +22,7 @@ buildscript {
         artifactVersion = "1.0.0-SNAPSHOT"
 
         springBootVersion = "1.2.4.RELEASE"
-        cfg4jVersion = "3.3.0"
+        cfg4jVersion = "3.3.1"
     }
 }
 

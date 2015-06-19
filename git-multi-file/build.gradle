@@ -18,7 +18,7 @@
 buildscript {
 
     ext {
-        artifactName = "git-multi-branch"
+        artifactName = "git-multi-file"
 
         springBootVersion = "1.2.4.RELEASE"
     }

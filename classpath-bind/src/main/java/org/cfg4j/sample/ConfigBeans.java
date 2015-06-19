@@ -34,7 +34,7 @@ public class ConfigBeans {
     // Specify which files to load. Configuration from both files will be merged.
     ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.properties"), new File("otherConfig.properties"));
 
-    // Use Git repository as configuration store
+    // Use classpath repository as configuration store
     ConfigurationSource source = new ClasspathConfigurationSource(configFilesProvider);
 
     // Create provider
