@@ -17,6 +17,8 @@
 ## Apps
 * [classpath-bind](classpath-bind/) - reads configuration from a classpath files and outputs values
   to the stdout.
+* [consul-bind](consul-bind/) - reads configuration from a local [Consul](http://consul.io) agent and outputs values
+  to the stdout. Automatically reloads configuration after change.
 * [files-bind](files-bind/) - reads configuration from a local files and outputs values
   to the stdout. Automatically reloads configuration after change.
 * [git-simple](git-simple/) - reads configuration from a given git repository (using *getProperty* methods) and outputs values
