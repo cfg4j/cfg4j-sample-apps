@@ -13,4 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-include 'classpath-bind', 'git-bind', 'git-simple', 'git-multi-file'
+include 'classpath-bind', 'files-bind', 'git-bind', 'git-simple', 'git-multi-file'
