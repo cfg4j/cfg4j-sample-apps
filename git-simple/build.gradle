@@ -42,7 +42,6 @@ apply plugin: "spring-boot"
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
 }
 
 // ----------- External module dependencies -----------
