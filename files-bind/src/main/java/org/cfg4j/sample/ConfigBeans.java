@@ -41,7 +41,7 @@ public class ConfigBeans {
   @Bean
   public ConfigurationProvider configurationProvider() {
     // Specify which files to load. Configuration from both files will be merged.
-    ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.properties"), new File("otherConfig.properties"));
+    ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.yaml"), new File("otherConfig.properties"));
 
     // Use local files as configuration store
     ConfigurationSource source = new FilesConfigurationSource(configFilesProvider);

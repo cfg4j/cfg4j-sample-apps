@@ -13,14 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-spring.main.show_banner=false
+reksio:
+  awake: true
+  bornIn: Poland
+  birthYear: 1967
+  friends:
+    - Bolek
+    - Lolek
 
-reksio.awake=true
-reksio.bornIn=Poland
-reksio.birthYear=1967
-reksio.friends=Bolek, Lolek
-reksio.homepage=https://en.wikipedia.org/wiki/Reksio
-reksio.grades=Math=A,PE=A,Polish=A
-
-some.setting = some setting string value
-some.other.setting = what do you know? :p
+  homepage: https://en.wikipedia.org/wiki/Reksio
+  grades: Math=A,PE=A,Polish=A
