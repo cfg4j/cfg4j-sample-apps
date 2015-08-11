@@ -18,11 +18,11 @@ package org.cfg4j.sample;
 import org.cfg4j.provider.ConfigurationProvider;
 import org.cfg4j.provider.ConfigurationProviderBuilder;
 import org.cfg4j.source.ConfigurationSource;
-import org.cfg4j.source.context.Environment;
-import org.cfg4j.source.context.ImmutableEnvironment;
+import org.cfg4j.source.context.environment.Environment;
+import org.cfg4j.source.context.environment.ImmutableEnvironment;
 import org.cfg4j.source.git.GitConfigurationSourceBuilder;
-import org.cfg4j.source.refresh.RefreshStrategy;
-import org.cfg4j.source.refresh.strategy.PeriodicalRefreshStrategy;
+import org.cfg4j.source.reload.ReloadStrategy;
+import org.cfg4j.source.reload.strategy.PeriodicalReloadStrategy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -49,13 +49,13 @@ public class ConfigBeans {
     Environment environment = new ImmutableEnvironment(branch);
 
     // Reload configuration every 5 seconds
-    RefreshStrategy refreshStrategy = new PeriodicalRefreshStrategy(5, TimeUnit.SECONDS);
+    ReloadStrategy refreshStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
 
     // Create provider
     return new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
         .withEnvironment(environment)
-        .withRefreshStrategy(refreshStrategy)
+        .withReloadStrategy(refreshStrategy)
         .build();
   }
 }
