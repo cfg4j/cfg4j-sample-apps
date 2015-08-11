@@ -19,11 +19,11 @@ import org.cfg4j.provider.ConfigurationProvider;
 import org.cfg4j.provider.ConfigurationProviderBuilder;
 import org.cfg4j.source.ConfigurationSource;
 import org.cfg4j.source.classpath.ClasspathConfigurationSource;
-import org.cfg4j.source.git.ConfigFilesProvider;
+import org.cfg4j.source.context.filesprovider.ConfigFilesProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 @Configuration
@@ -32,7 +32,7 @@ public class ConfigBeans {
   @Bean
   public ConfigurationProvider configurationProvider() {
     // Specify which files to load. Configuration from both files will be merged.
-    ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.properties"), new File("otherConfig.properties"));
+    ConfigFilesProvider configFilesProvider = () -> Arrays.asList(Paths.get("application.properties"), Paths.get("otherConfig.properties"));
 
     // Use classpath repository as configuration store
     ConfigurationSource source = new ClasspathConfigurationSource(configFilesProvider);
