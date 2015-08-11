@@ -18,9 +18,9 @@ package org.cfg4j.sample;
 import org.cfg4j.provider.ConfigurationProvider;
 import org.cfg4j.provider.ConfigurationProviderBuilder;
 import org.cfg4j.source.ConfigurationSource;
-import org.cfg4j.source.consul.ConsulConfigurationSource;
-import org.cfg4j.source.refresh.RefreshStrategy;
-import org.cfg4j.source.refresh.strategy.PeriodicalRefreshStrategy;
+import org.cfg4j.source.consul.ConsulConfigurationSourceBuilder;
+import org.cfg4j.source.reload.ReloadStrategy;
+import org.cfg4j.source.reload.strategy.PeriodicalReloadStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -32,15 +32,15 @@ public class ConfigBeans {
   @Bean
   public ConfigurationProvider configurationProvider() {
     // Use Consul service as configuration store
-    ConfigurationSource source = new ConsulConfigurationSource();
+    ConfigurationSource source = new ConsulConfigurationSourceBuilder().build();
 
     // Reload configuration every 5 seconds
-    RefreshStrategy refreshStrategy = new PeriodicalRefreshStrategy(5, TimeUnit.SECONDS);
+    ReloadStrategy refreshStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
 
     // Create provider
     return new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
-        .withRefreshStrategy(refreshStrategy)
+        .withReloadStrategy(refreshStrategy)
         .build();
   }
 }
