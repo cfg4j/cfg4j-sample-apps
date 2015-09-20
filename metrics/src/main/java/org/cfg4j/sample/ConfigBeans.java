@@ -56,12 +56,12 @@ public class ConfigBeans {
     Environment environment = new ImmutableEnvironment(filesPath);
 
     // Reload configuration every 500 milliseconds
-    ReloadStrategy refreshStrategy = new PeriodicalReloadStrategy(500, TimeUnit.MILLISECONDS);
+    ReloadStrategy reloadStrategy = new PeriodicalReloadStrategy(500, TimeUnit.MILLISECONDS);
 
     // Create provider
     return new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
-        .withReloadStrategy(refreshStrategy)
+        .withReloadStrategy(reloadStrategy)
         .withEnvironment(environment)
         .withMetrics(metricRegistry, "firstProvider.")
         .build();
