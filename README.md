@@ -27,3 +27,5 @@
    to the stdout. Automatically reloads configuration after change.
 * [git-multi-file](git-multi-file/) - reads configuration from a given git repository (from multiple files) and outputs values
   to the stdout. Automatically reloads configuration after change.
+* [metrics](metrics/) - reads configuration from a a local file and outputs values
+  to the stdout. Automatically reloads configuration after change. **Exposes metrics**.
