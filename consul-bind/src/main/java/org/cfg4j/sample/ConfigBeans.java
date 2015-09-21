@@ -35,12 +35,12 @@ public class ConfigBeans {
     ConfigurationSource source = new ConsulConfigurationSourceBuilder().build();
 
     // Reload configuration every 5 seconds
-    ReloadStrategy refreshStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
+    ReloadStrategy reloadStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
 
     // Create provider
     return new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
-        .withReloadStrategy(refreshStrategy)
+        .withReloadStrategy(reloadStrategy)
         .build();
   }
 }

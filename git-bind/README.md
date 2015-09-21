@@ -37,13 +37,13 @@ public ConfigurationProvider configurationProvider() {
   Environment environment = new ImmutableEnvironment(branch);
 
   // Reload configuration every 5 seconds
-  RefreshStrategy refreshStrategy = new PeriodicalRefreshStrategy(5, TimeUnit.SECONDS);
+  ReloadStrategy reloadStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
 
   // Create provider
   return new ConfigurationProviderBuilder()
       .withConfigurationSource(source)
       .withEnvironment(environment)
-      .withRefreshStrategy(refreshStrategy)
+      .withReloadStrategy(reloadStrategy)
       .build();
 }
 ```

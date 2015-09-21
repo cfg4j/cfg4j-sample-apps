@@ -49,13 +49,13 @@ public class ConfigBeans {
     Environment environment = new ImmutableEnvironment(branch);
 
     // Reload configuration every 5 seconds
-    ReloadStrategy refreshStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
+    ReloadStrategy reloadStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
 
     // Create provider
     return new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
         .withEnvironment(environment)
-        .withReloadStrategy(refreshStrategy)
+        .withReloadStrategy(reloadStrategy)
         .build();
   }
 }

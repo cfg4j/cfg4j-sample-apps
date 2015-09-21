@@ -34,12 +34,12 @@ public ConfigurationProvider configurationProvider() {
   ConfigurationSource source = new ConsulConfigurationSource();
   
   // Reload configuration every 5 seconds
-  RefreshStrategy refreshStrategy = new PeriodicalRefreshStrategy(5, TimeUnit.SECONDS);
+  ReloadStrategy reloadStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
 
   // Create provider
   return new ConfigurationProviderBuilder()
       .withConfigurationSource(source)
-      .withRefreshStrategy(refreshStrategy)
+      .withReloadStrategy(reloadStrategy)
       .build();
 }
 ```
