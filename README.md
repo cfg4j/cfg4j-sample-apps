@@ -1,19 +1,5 @@
 ## Sample applications using [cfg4j](http://cfg4j.org) library
 
-## Usage
-* Build all apps
-
-```
-> cd cfg4j-sample-apps/
-> ./gradlew build
-```
-
-* Run app (in this example: "git-bind") - **read README.md file in the corresponding app root directory** for more information.
-
-```
-> java -jar git-bind/build/libs/git-bind-1.0.0-SNAPSHOT.jar
-```
-
 ## Apps
 * [classpath-bind](classpath-bind/) - reads configuration from a **classpath files** and outputs values
   to the stdout.
@@ -29,3 +15,17 @@
   to the stdout. Automatically reloads configuration after change.
 * [metrics](metrics/) - reads configuration from a a local file and outputs values
   to the stdout. Automatically reloads configuration after change. **Exposes metrics**.
+
+## Usage
+* Build all apps
+
+```
+> cd cfg4j-sample-apps/
+> ./gradlew build
+```
+
+* Run app (in this example: "git-bind") - **read README.md file in the corresponding app root directory** for more information.
+
+```
+> java -jar git-bind/build/libs/git-bind-1.0.0-SNAPSHOT.jar
+```
