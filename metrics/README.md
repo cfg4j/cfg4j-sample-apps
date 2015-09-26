@@ -23,6 +23,9 @@ You can:
 @Value("${configFilesPath:./metrics/build/libs/}")
 private String filesPath; // Run with -DconfigFilesPath=<configFilesPath> parameter to override
 
+@Autowired
+private MetricRegistry metricRegistry;
+
 @Bean
 public ConfigurationProvider configurationProvider() {
   // Specify which files to load. Configuration from both files will be merged.
