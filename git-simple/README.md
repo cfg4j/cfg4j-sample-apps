@@ -13,7 +13,7 @@ You can:
 * use non-default branch: **-DconfigBranch=\<branchName\>**
 
 ```
-> java -DconfigRepoPath=/tmp/myRepo.git -DconfigBranch=master -jar git-simple/build/libs/git-simple-1.0.0-SNAPSHOT.jar
+> java -DconfigRepoPath=/tmp/myRepo.git -DconfigBranch=myBranch -jar git-simple/build/libs/git-simple-1.0.0-SNAPSHOT.jar
 ```
 
 ## Code snippets
@@ -23,7 +23,7 @@ You can:
 @Value("${configRepoPath:https://github.com/cfg4j/cfg4j-git-sample-config.git}")
 private String configRepoPath; // Run with -DconfigRepoPath=<repositoryUrl> parameter to override
 
-@Value("${configBranch:production-env}")
+@Value("${configBranch:master}")
 private String branch; // Run with -DconfigBranch=<branchName> parameter to override
 
 @Bean
