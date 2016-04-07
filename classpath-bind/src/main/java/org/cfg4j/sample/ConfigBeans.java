@@ -32,7 +32,7 @@ public class ConfigBeans {
   @Bean
   public ConfigurationProvider configurationProvider() {
     // Specify which files to load. Configuration from both files will be merged.
-    ConfigFilesProvider configFilesProvider = () -> Arrays.asList(Paths.get("application.properties"), Paths.get("otherConfig.properties"));
+    ConfigFilesProvider configFilesProvider = () -> Arrays.asList(Paths.get("application.yaml"), Paths.get("otherConfig.properties"));
 
     // Use classpath repository as configuration store
     ConfigurationSource source = new ClasspathConfigurationSource(configFilesProvider);
