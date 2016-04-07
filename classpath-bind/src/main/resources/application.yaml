@@ -21,7 +21,10 @@ reksio:
   awake: true
   bornIn: Poland
   birthYear: 1967
-  friends: Bolek, Lolek
+  friends:
+    - Bolek
+    - Lolek
+
   homepage: https://en.wikipedia.org/wiki/Reksio
   grades: Math=A,PE=A,Polish=A
 
