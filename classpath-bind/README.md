@@ -13,7 +13,7 @@ App demonstrating how to access configuration stored in a classpath files using 
 ### Configuration beans - see ConfigBeans.java
 ```java
 // Specify which files to load. Configuration from both files will be merged.
-ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.properties"), new File("otherConfig.properties"));
+ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.yaml"), new File("otherConfig.properties"));
 
 // Use classpath repository as configuration store
 ConfigurationSource source = new ClasspathConfigurationSource(configFilesProvider);
