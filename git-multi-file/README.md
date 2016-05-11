@@ -29,7 +29,7 @@ private String branch; // Run with -DconfigBranch=<branchName> parameter to over
 @Bean
 public ConfigurationProvider configurationProvider() {
   // Specify which files to load. Configuration from both files will be merged.
-  ConfigFilesProvider configFilesProvider = () -> Arrays.asList(new File("application.properties"), new File("otherConfig.properties"));
+  ConfigFilesProvider configFilesProvider = () -> Arrays.asList(Paths.get("application.properties"), Paths.get("otherConfig.properties"));
 
   // Use Git repository as configuration store
   ConfigurationSource source = new GitConfigurationSourceBuilder()
