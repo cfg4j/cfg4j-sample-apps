@@ -31,7 +31,7 @@ App demonstrating how to access configuration stored in a Consul service using c
 @Bean
 public ConfigurationProvider configurationProvider() {
   // Use Consul service as configuration store
-  ConfigurationSource source = new ConsulConfigurationSource();
+  ConfigurationSource source = new ConsulConfigurationSourceBuilder().build();
   
   // Reload configuration every 5 seconds
   ReloadStrategy reloadStrategy = new PeriodicalReloadStrategy(5, TimeUnit.SECONDS);
